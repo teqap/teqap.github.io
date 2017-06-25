@@ -77,7 +77,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		$main._show = function(id, initial) {
 
 			var path = id.split('-');
-			console.log(id, path);
 
 			var $article = $main_articles.filter('#' + path[0]);
 
@@ -222,8 +221,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			return;
 
 			// Add state?
-			if (typeof addState != 'undefined'
-			&&	addState === true)
+			if (typeof addState != 'undefined' &&	addState === true)
 			history.pushState(null, null, '#');
 
 			// Handle lock.
@@ -352,8 +350,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		$window.on('hashchange', function(event) {
 
 			// Empty hash?
-			if (location.hash == ''
-			||	location.hash == '#') {
+			if (location.hash === '' ||	location.hash === '#') {
 
 				// Prevent default.
 				event.preventDefault();
@@ -365,7 +362,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			}
 
 			// Otherwise, check for a matching article.
-			else if ($main_articles.filter(location.hash).length > 0) {
+			else if ($main_articles.filter(location.hash.split('-')[0]).length > 0) {
 
 				// Prevent default.
 				event.preventDefault();
@@ -408,8 +405,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		$main_articles.hide();
 
 		// Initial article.
-		if (location.hash != ''
-		&&	location.hash != '#')
+		if (location.hash !== '' &&location.hash !== '#')
 		$window.on('load', function() {
 			$main._show(location.hash.substr(1), true);
 		});
