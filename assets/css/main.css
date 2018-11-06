@@ -882,7 +882,7 @@
 	}
 
 		table tbody tr {
-			border: solid 1px #ffffff;
+			border: solid 1px black;
 			border-left: 0;
 			border-right: 0;
 		}
